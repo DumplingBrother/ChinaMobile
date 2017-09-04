@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xsi:schemaLocation="  
+                    http://www.springframework.org/schema/beans   
+                    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd    
+                    http://www.springframework.org/schema/context    
+                    http://www.springframework.org/schema/context/spring-context-3.2.xsd    
+                    http://www.springframework.org/schema/tx   
+                    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd  
+                    http://www.springframework.org/schema/mvc   
+                    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd  
+                    http://www.springframework.org/schema/aop   
+                    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"  
+    default-autowire="byName">
+    
+	<!-- 配置DataSource数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1234"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/systest?Unicode=true&amp;characterEncoding=UTF-8"></property>
+	</bean>
+	<!-- 配置工厂，创建SqlSessionFactoryBean,同时制定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations" value="classpath:cn/pwc/pojo/empMapper.xml"></property>
+	</bean>
+	
+	<!-- 配置MapperScannerConfigurer -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+		<property name="basePackage" value="cn.pwc.dao"></property>
+	</bean>
+	
+	<!-- 开启注解扫描 -->
+	<context:component-scan base-package="cn.pwc"></context:component-scan>
+	
+	<!-- 开启RequestMapping注解 -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- 处理请求转发 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/emp/"></property>
+		<property name="suffix" value=".jsp"></property>	
+	</bean>
+</beans>
+	
+	
+	
