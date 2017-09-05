@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clps.cm.mapper.MobilePackageMapper" >
+  <resultMap id="BaseResultMap" type="com.clps.cm.pojo.MobilePackage" >
+    <id column="TEL_PACKAGE_ID" property="telPackageId" jdbcType="INTEGER" />
+    <result column="TEL_NUMB" property="telNumb" jdbcType="VARCHAR" />
+    <result column="BUSINESS_ID" property="businessId" jdbcType="INTEGER" />
+    <result column="PP_ID" property="ppId" jdbcType="INTEGER" />
+    <result column="START_TIME" property="startTime" jdbcType="DATE" />
+    <result column="END_TIME" property="endTime" jdbcType="DATE" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    TEL_PACKAGE_ID, TEL_NUMB, BUSINESS_ID, PP_ID, START_TIME, END_TIME, STATUS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_mobile_package
+    where TEL_PACKAGE_ID = #{telPackageId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_mobile_package
+    where TEL_PACKAGE_ID = #{telPackageId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.clps.cm.pojo.MobilePackage" >
+    insert into t_mobile_package (TEL_PACKAGE_ID, TEL_NUMB, BUSINESS_ID, 
+      PP_ID, START_TIME, END_TIME, 
+      STATUS)
+    values (#{telPackageId,jdbcType=INTEGER}, #{telNumb,jdbcType=VARCHAR}, #{businessId,jdbcType=INTEGER}, 
+      #{ppId,jdbcType=INTEGER}, #{startTime,jdbcType=DATE}, #{endTime,jdbcType=DATE}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.clps.cm.pojo.MobilePackage" >
+    insert into t_mobile_package
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="telPackageId != null" >
+        TEL_PACKAGE_ID,
+      </if>
+      <if test="telNumb != null" >
+        TEL_NUMB,
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID,
+      </if>
+      <if test="ppId != null" >
+        PP_ID,
+      </if>
+      <if test="startTime != null" >
+        START_TIME,
+      </if>
+      <if test="endTime != null" >
+        END_TIME,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="telPackageId != null" >
+        #{telPackageId,jdbcType=INTEGER},
+      </if>
+      <if test="telNumb != null" >
+        #{telNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=INTEGER},
+      </if>
+      <if test="ppId != null" >
+        #{ppId,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=DATE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.clps.cm.pojo.MobilePackage" >
+    update t_mobile_package
+    <set >
+      <if test="telNumb != null" >
+        TEL_NUMB = #{telNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        BUSINESS_ID = #{businessId,jdbcType=INTEGER},
+      </if>
+      <if test="ppId != null" >
+        PP_ID = #{ppId,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        START_TIME = #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        END_TIME = #{endTime,jdbcType=DATE},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where TEL_PACKAGE_ID = #{telPackageId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.clps.cm.pojo.MobilePackage" >
+    update t_mobile_package
+    set TEL_NUMB = #{telNumb,jdbcType=VARCHAR},
+      BUSINESS_ID = #{businessId,jdbcType=INTEGER},
+      PP_ID = #{ppId,jdbcType=INTEGER},
+      START_TIME = #{startTime,jdbcType=DATE},
+      END_TIME = #{endTime,jdbcType=DATE},
+      STATUS = #{status,jdbcType=INTEGER}
+    where TEL_PACKAGE_ID = #{telPackageId,jdbcType=INTEGER}
+  </update>
+</mapper>

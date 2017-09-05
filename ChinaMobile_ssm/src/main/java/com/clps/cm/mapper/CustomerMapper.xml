@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clps.cm.mapper.CustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.clps.cm.pojo.Customer" >
+    <id column="CUSTOMER_ID" property="customerId" jdbcType="INTEGER" />
+    <result column="CUSTOMER_USERNAME" property="customerUsername" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_NAME" property="customerName" jdbcType="VARCHAR" />
+    <result column="ID_CARD_NUMB" property="idCardNumb" jdbcType="VARCHAR" />
+    <result column="TEL_NUMB" property="telNumb" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_BIRTHDAY" property="customerBirthday" jdbcType="DATE" />
+    <result column="CUSTOMER_EMAIL" property="customerEmail" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_PWD" property="customerPwd" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CUSTOMER_ID, CUSTOMER_USERNAME, CUSTOMER_NAME, ID_CARD_NUMB, TEL_NUMB, CUSTOMER_BIRTHDAY, 
+    CUSTOMER_EMAIL, CUSTOMER_PWD
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_customer
+    where CUSTOMER_ID = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_customer
+    where CUSTOMER_ID = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.clps.cm.pojo.Customer" >
+    insert into t_customer (CUSTOMER_ID, CUSTOMER_USERNAME, CUSTOMER_NAME, 
+      ID_CARD_NUMB, TEL_NUMB, CUSTOMER_BIRTHDAY, 
+      CUSTOMER_EMAIL, CUSTOMER_PWD)
+    values (#{customerId,jdbcType=INTEGER}, #{customerUsername,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR}, 
+      #{idCardNumb,jdbcType=VARCHAR}, #{telNumb,jdbcType=VARCHAR}, #{customerBirthday,jdbcType=DATE}, 
+      #{customerEmail,jdbcType=VARCHAR}, #{customerPwd,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.clps.cm.pojo.Customer" >
+    insert into t_customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        CUSTOMER_ID,
+      </if>
+      <if test="customerUsername != null" >
+        CUSTOMER_USERNAME,
+      </if>
+      <if test="customerName != null" >
+        CUSTOMER_NAME,
+      </if>
+      <if test="idCardNumb != null" >
+        ID_CARD_NUMB,
+      </if>
+      <if test="telNumb != null" >
+        TEL_NUMB,
+      </if>
+      <if test="customerBirthday != null" >
+        CUSTOMER_BIRTHDAY,
+      </if>
+      <if test="customerEmail != null" >
+        CUSTOMER_EMAIL,
+      </if>
+      <if test="customerPwd != null" >
+        CUSTOMER_PWD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="customerUsername != null" >
+        #{customerUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumb != null" >
+        #{idCardNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="telNumb != null" >
+        #{telNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="customerBirthday != null" >
+        #{customerBirthday,jdbcType=DATE},
+      </if>
+      <if test="customerEmail != null" >
+        #{customerEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPwd != null" >
+        #{customerPwd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.clps.cm.pojo.Customer" >
+    update t_customer
+    <set >
+      <if test="customerUsername != null" >
+        CUSTOMER_USERNAME = #{customerUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        CUSTOMER_NAME = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumb != null" >
+        ID_CARD_NUMB = #{idCardNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="telNumb != null" >
+        TEL_NUMB = #{telNumb,jdbcType=VARCHAR},
+      </if>
+      <if test="customerBirthday != null" >
+        CUSTOMER_BIRTHDAY = #{customerBirthday,jdbcType=DATE},
+      </if>
+      <if test="customerEmail != null" >
+        CUSTOMER_EMAIL = #{customerEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPwd != null" >
+        CUSTOMER_PWD = #{customerPwd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CUSTOMER_ID = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.clps.cm.pojo.Customer" >
+    update t_customer
+    set CUSTOMER_USERNAME = #{customerUsername,jdbcType=VARCHAR},
+      CUSTOMER_NAME = #{customerName,jdbcType=VARCHAR},
+      ID_CARD_NUMB = #{idCardNumb,jdbcType=VARCHAR},
+      TEL_NUMB = #{telNumb,jdbcType=VARCHAR},
+      CUSTOMER_BIRTHDAY = #{customerBirthday,jdbcType=DATE},
+      CUSTOMER_EMAIL = #{customerEmail,jdbcType=VARCHAR},
+      CUSTOMER_PWD = #{customerPwd,jdbcType=VARCHAR}
+    where CUSTOMER_ID = #{customerId,jdbcType=INTEGER}
+  </update>
+</mapper>

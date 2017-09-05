@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clps.cm.mapper.PreferentialInforMapper" >
+  <resultMap id="BaseResultMap" type="com.clps.cm.pojo.PreferentialInfor" >
+    <id column="PREFERENTIAL_ID" property="preferentialId" jdbcType="INTEGER" />
+    <result column="PREFERENTIAL_NAME" property="preferentialName" jdbcType="VARCHAR" />
+    <result column="TEL_CHARGE" property="telCharge" jdbcType="INTEGER" />
+    <result column="DISCOUNT_AMOUNT" property="discountAmount" jdbcType="INTEGER" />
+    <result column="START_TIME" property="startTime" jdbcType="DATE" />
+    <result column="ENDTIME" property="endtime" jdbcType="DATE" />
+    <result column="IS_AVAILABLE" property="isAvailable" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PREFERENTIAL_ID, PREFERENTIAL_NAME, TEL_CHARGE, DISCOUNT_AMOUNT, START_TIME, ENDTIME, 
+    IS_AVAILABLE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_preferential_infor
+    where PREFERENTIAL_ID = #{preferentialId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_preferential_infor
+    where PREFERENTIAL_ID = #{preferentialId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.clps.cm.pojo.PreferentialInfor" >
+    insert into t_preferential_infor (PREFERENTIAL_ID, PREFERENTIAL_NAME, 
+      TEL_CHARGE, DISCOUNT_AMOUNT, START_TIME, 
+      ENDTIME, IS_AVAILABLE)
+    values (#{preferentialId,jdbcType=INTEGER}, #{preferentialName,jdbcType=VARCHAR}, 
+      #{telCharge,jdbcType=INTEGER}, #{discountAmount,jdbcType=INTEGER}, #{startTime,jdbcType=DATE}, 
+      #{endtime,jdbcType=DATE}, #{isAvailable,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.clps.cm.pojo.PreferentialInfor" >
+    insert into t_preferential_infor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="preferentialId != null" >
+        PREFERENTIAL_ID,
+      </if>
+      <if test="preferentialName != null" >
+        PREFERENTIAL_NAME,
+      </if>
+      <if test="telCharge != null" >
+        TEL_CHARGE,
+      </if>
+      <if test="discountAmount != null" >
+        DISCOUNT_AMOUNT,
+      </if>
+      <if test="startTime != null" >
+        START_TIME,
+      </if>
+      <if test="endtime != null" >
+        ENDTIME,
+      </if>
+      <if test="isAvailable != null" >
+        IS_AVAILABLE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="preferentialId != null" >
+        #{preferentialId,jdbcType=INTEGER},
+      </if>
+      <if test="preferentialName != null" >
+        #{preferentialName,jdbcType=VARCHAR},
+      </if>
+      <if test="telCharge != null" >
+        #{telCharge,jdbcType=INTEGER},
+      </if>
+      <if test="discountAmount != null" >
+        #{discountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="isAvailable != null" >
+        #{isAvailable,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.clps.cm.pojo.PreferentialInfor" >
+    update t_preferential_infor
+    <set >
+      <if test="preferentialName != null" >
+        PREFERENTIAL_NAME = #{preferentialName,jdbcType=VARCHAR},
+      </if>
+      <if test="telCharge != null" >
+        TEL_CHARGE = #{telCharge,jdbcType=INTEGER},
+      </if>
+      <if test="discountAmount != null" >
+        DISCOUNT_AMOUNT = #{discountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        START_TIME = #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        ENDTIME = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="isAvailable != null" >
+        IS_AVAILABLE = #{isAvailable,jdbcType=CHAR},
+      </if>
+    </set>
+    where PREFERENTIAL_ID = #{preferentialId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.clps.cm.pojo.PreferentialInfor" >
+    update t_preferential_infor
+    set PREFERENTIAL_NAME = #{preferentialName,jdbcType=VARCHAR},
+      TEL_CHARGE = #{telCharge,jdbcType=INTEGER},
+      DISCOUNT_AMOUNT = #{discountAmount,jdbcType=INTEGER},
+      START_TIME = #{startTime,jdbcType=DATE},
+      ENDTIME = #{endtime,jdbcType=DATE},
+      IS_AVAILABLE = #{isAvailable,jdbcType=CHAR}
+    where PREFERENTIAL_ID = #{preferentialId,jdbcType=INTEGER}
+  </update>
+</mapper>

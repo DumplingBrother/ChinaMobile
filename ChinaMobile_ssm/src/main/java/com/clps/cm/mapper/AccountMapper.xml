@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clps.cm.mapper.AccountMapper" >
+  <resultMap id="BaseResultMap" type="com.clps.cm.pojo.Account" >
+    <id column="ACCOUNT_ID" property="accountId" jdbcType="INTEGER" />
+    <result column="TEL_NUMBER" property="telNumber" jdbcType="VARCHAR" />
+    <result column="ACCOUNT_BALANCE" property="accountBalance" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ACCOUNT_ID, TEL_NUMBER, ACCOUNT_BALANCE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_account
+    where ACCOUNT_ID = #{accountId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_account
+    where ACCOUNT_ID = #{accountId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.clps.cm.pojo.Account" >
+    insert into t_account (ACCOUNT_ID, TEL_NUMBER, ACCOUNT_BALANCE
+      )
+    values (#{accountId,jdbcType=INTEGER}, #{telNumber,jdbcType=VARCHAR}, #{accountBalance,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.clps.cm.pojo.Account" >
+    insert into t_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="accountId != null" >
+        ACCOUNT_ID,
+      </if>
+      <if test="telNumber != null" >
+        TEL_NUMBER,
+      </if>
+      <if test="accountBalance != null" >
+        ACCOUNT_BALANCE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="accountId != null" >
+        #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="telNumber != null" >
+        #{telNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBalance != null" >
+        #{accountBalance,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.clps.cm.pojo.Account" >
+    update t_account
+    <set >
+      <if test="telNumber != null" >
+        TEL_NUMBER = #{telNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBalance != null" >
+        ACCOUNT_BALANCE = #{accountBalance,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ACCOUNT_ID = #{accountId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.clps.cm.pojo.Account" >
+    update t_account
+    set TEL_NUMBER = #{telNumber,jdbcType=VARCHAR},
+      ACCOUNT_BALANCE = #{accountBalance,jdbcType=INTEGER}
+    where ACCOUNT_ID = #{accountId,jdbcType=INTEGER}
+  </update>
+</mapper>
