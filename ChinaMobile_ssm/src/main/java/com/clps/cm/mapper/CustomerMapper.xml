@@ -11,12 +11,15 @@
     <result column="CUSTOMER_EMAIL" property="customerEmail" jdbcType="VARCHAR" />
     <result column="CUSTOMER_PWD" property="customerPwd" jdbcType="VARCHAR" />
   </resultMap>
+  
   <sql id="Base_Column_List" >
     CUSTOMER_ID, CUSTOMER_USERNAME, CUSTOMER_NAME, ID_CARD_NUMB, TEL_NUMB, CUSTOMER_BIRTHDAY, 
     CUSTOMER_EMAIL, CUSTOMER_PWD
   </sql>
-  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
-        select * from t_customer where CUSTOMER_USERNAME = #{customerUsername,jdbcType=VARCHAR}
+  <select id="selectByUsername" resultMap="BaseResultMap" resultType="java.lang.String">
+        select *
+        from t_customer 
+        where CUSTOMER_USERNAME = #{customerUsername,jdbcType=VARCHAR}
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

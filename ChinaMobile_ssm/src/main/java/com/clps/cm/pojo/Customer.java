@@ -1,5 +1,7 @@
 package com.clps.cm.pojo;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Customer {
@@ -59,12 +61,19 @@ public class Customer {
         this.telNumb = telNumb == null ? null : telNumb.trim();
     }
 
-    public Date getCustomerBirthday() {
-        return customerBirthday;
+    public String getCustomerBirthday() {
+    	if(customerBirthday == null)
+			return null;
+		else{
+			DateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+			return dateFormat.format(customerBirthday);
+		}
     }
 
     public void setCustomerBirthday(Date customerBirthday) {
-        this.customerBirthday = customerBirthday;
+    	
+    	this.customerBirthday=customerBirthday;
     }
 
     public String getCustomerEmail() {
