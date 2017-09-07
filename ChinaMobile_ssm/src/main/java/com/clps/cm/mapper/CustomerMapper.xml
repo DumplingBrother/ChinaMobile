@@ -15,6 +15,9 @@
     CUSTOMER_ID, CUSTOMER_USERNAME, CUSTOMER_NAME, ID_CARD_NUMB, TEL_NUMB, CUSTOMER_BIRTHDAY, 
     CUSTOMER_EMAIL, CUSTOMER_PWD
   </sql>
+  <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from t_customer where CUSTOMER_USERNAME = #{customerUsername,jdbcType=VARCHAR}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
