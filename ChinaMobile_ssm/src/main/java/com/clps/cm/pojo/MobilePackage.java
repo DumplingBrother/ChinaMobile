@@ -1,5 +1,12 @@
 package com.clps.cm.pojo;
 
+/**
+ * 
+ *@author qiuming
+ *Package_name:com.clps.cm.pojo
+ *Time:2017年9月7日下午2:07:01
+ *Description:
+ */
 import java.util.Date;
 
 public class MobilePackage {

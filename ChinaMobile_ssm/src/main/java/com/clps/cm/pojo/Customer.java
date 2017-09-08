@@ -3,7 +3,13 @@ package com.clps.cm.pojo;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * 
+ *@author qiuming
+ *Package_name:com.clps.cm.pojo
+ *Time:2017年9月7日下午2:07:01
+ *Description:
+ */
 public class Customer {
     private Integer customerId;
 

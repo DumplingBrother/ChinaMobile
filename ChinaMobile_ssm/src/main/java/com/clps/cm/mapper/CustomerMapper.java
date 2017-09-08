@@ -2,17 +2,58 @@ package com.clps.cm.mapper;
 
 import com.clps.cm.pojo.Customer;
 
+/**
+ * 
+ * @author qiuming Package_name:com.clps.cm.pojo Time:2017年9月7日下午2:07:01
+ *         Description:
+ */
 public interface CustomerMapper {
-    int deleteByPrimaryKey(Integer customerId);
+	/**
+	 * 
+	 * @param customerId
+	 * @return
+	 */
+	int deleteByPrimaryKey(Integer customerId);
 
-    int insert(Customer record);
+	/**
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int insert(Customer record);
 
-    int insertSelective(Customer record);
+	/**
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int insertSelective(Customer record);
 
-    Customer selectByPrimaryKey(Integer customerId);
-    Customer selectByUsername(String customerUsername);
+	/**
+	 * 
+	 * @param customerId
+	 * @return
+	 */
+	Customer selectByPrimaryKey(Integer customerId);
 
-    int updateByPrimaryKeySelective(Customer record);
+	/**
+	 * 
+	 * @param customerUsername
+	 * @return
+	 */
+	Customer selectByUsername(String customerUsername);
 
-    int updateByPrimaryKey(Customer record);
+	/**
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int updateByPrimaryKeySelective(Customer record);
+
+	/**
+	 * 
+	 * @param record
+	 * @return
+	 */
+	int updateByPrimaryKey(Customer record);
 }

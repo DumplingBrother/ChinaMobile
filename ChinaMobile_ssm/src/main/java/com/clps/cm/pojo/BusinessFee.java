@@ -4,12 +4,12 @@
 package com.clps.cm.pojo;
 
 /**
-* <p>Title:BusinessFee </p>
-* <p>Description: </p>
-* <p>Company: </p> 
-* @author ZLX
-* @date 2017年9月8日上午9:41:03
-*/
+ * 
+ *@author qiuming
+ *Package_name:com.clps.cm.pojo
+ *Time:2017年9月7日下午2:07:01
+ *Description:
+ */
 public class BusinessFee {
 
 	private Integer business_id;
