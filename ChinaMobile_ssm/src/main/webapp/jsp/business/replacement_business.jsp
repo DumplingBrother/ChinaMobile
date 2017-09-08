@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
-<link href="../css/reset.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 <title>无标题文档</title>
 
 <script>

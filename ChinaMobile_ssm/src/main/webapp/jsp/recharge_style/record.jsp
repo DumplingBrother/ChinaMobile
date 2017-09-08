@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
-<link href="../css/reset.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id="record-body">
@@ -77,7 +77,7 @@
 				<table class="table-infor-record-style2" id="page2">
 					<tr>
 						<th width="113">第1页/共8页</th>
-						<td id="page-skip">首页 上一页 下一页 尾页 &nbsp;&nbsp;<input
+						<td id="page-skip"]>首页 上一页 下一页 尾页 &nbsp;&nbsp;<input
 							type="text" class="input-page-style">&nbsp; <input
 							type="submit" value="go" />
 						</td>

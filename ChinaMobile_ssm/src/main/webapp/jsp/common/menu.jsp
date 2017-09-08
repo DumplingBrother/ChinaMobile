@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>江苏移动网上营业厅首页</title>
 
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet" type="text/css" />
 
 <style>
 </style>
@@ -22,7 +22,7 @@
 			</div>
 			<ul class="tit_con">
 				<li><span class="menu-infor"> <a
-						href="../numericalSelection/select_number.jsp" target="content1">号码办理</a>
+						href="<%=request.getContextPath()%>/jsp/numericalSelection/select_number.jsp" target="content1">号码办理</a>
 						<span></li>
 			</ul>
 

@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
-<link href="../css/reset.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
 <script>
 	/**
 	 	选择城市，选中某个城市城市颜色变为背景颜色变为

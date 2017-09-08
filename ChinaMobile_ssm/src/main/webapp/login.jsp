@@ -5,13 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>移动营业厅</title>
-<link href="../css/reset.css" rel="stylesheet" type="text/css" />
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="contain">
 		<div id="head">
-			<img src="../image/logo.gif" />
+			<img src="image/logo.gif" />
 		</div>
 		<div id="main">
 			<ul class="main-recommend-list">
@@ -35,7 +35,7 @@
 
 
 
-				<form class="main-loginBox-center" action="index.html">
+				<form class="main-loginBox-center" action="index.jsp">
 
 					<div class="tusername">
 						<span>账户</span> <input type="text" name="username" />&nbsp;
@@ -47,7 +47,7 @@
 						<button type="submit">
 							<font color="#ffffff" size="4">登录</font>
 						</button>
-						<a href="register.html"> <span id="register"
+						<a href="register.jsp"> <span id="register"
 							style="display: ''; font-size: 17px">立即注册！</span>
 
 						</a>

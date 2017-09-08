@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>套餐选择</title>
-<link href="../css/reset.css" rel="stylesheet" type="text/css" />
-<link href="../css/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/index.css" rel="stylesheet" type="text/css" />
 <style>
 .package-list-result {
 	border: 2px solid #DDF0FE;
@@ -98,11 +98,11 @@
 				<tr>
 					<td class="left-td-style">付款方式：</td>
 					<td class="right-td-style"><img
-						src="../image/h-show-buyPro-userCos-pay-unipay.gif" /><span>网银支付</span></td>
+						src="<%=request.getContextPath()%>/image/h-show-buyPro-userCos-pay-unipay.gif" /><span>网银支付</span></td>
 				</tr>
 
 			</table>
-			<img src="../image/qqtsl58.gif" style="margin-top: 30px" />
+			<img src="<%=request.getContextPath()%>/image/qqtsl58.gif" style="margin-top: 30px" />
 
 
 
