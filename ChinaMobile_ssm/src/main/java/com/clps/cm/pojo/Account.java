@@ -1,33 +1,28 @@
 package com.clps.cm.pojo;
 
+
+
 public class Account {
-    private Integer accountId;
-
-    private String telNumber;
-
-    private Integer accountBalance;
-
-    public Integer getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
-    public String getTelNumber() {
-        return telNumber;
-    }
-
-    public void setTelNumber(String telNumber) {
-        this.telNumber = telNumber == null ? null : telNumber.trim();
-    }
-
-    public Integer getAccountBalance() {
-        return accountBalance;
-    }
-
-    public void setAccountBalance(Integer accountBalance) {
-        this.accountBalance = accountBalance;
-    }
+	private Integer account_id;
+	private String tel_number;
+	private Integer account_balance;
+	public Integer getAccount_id() {
+		return account_id;
+	}
+	public void setAccount_id(Integer account_id) {
+		this.account_id = account_id;
+	}
+	public String getTel_number() {
+		return tel_number;
+	}
+	public void setTel_number(String tel_number) {
+		this.tel_number = tel_number;
+	}
+	public Integer getAccount_balance() {
+		return account_balance;
+	}
+	public void setAccount_balance(Integer account_balance) {
+		this.account_balance = account_balance;
+	}
+	
 }

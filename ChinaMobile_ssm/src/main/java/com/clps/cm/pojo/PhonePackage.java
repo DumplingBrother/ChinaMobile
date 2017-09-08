@@ -1,43 +1,63 @@
+/**
+ * 
+ */
 package com.clps.cm.pojo;
 
+
 public class PhonePackage {
-    private Integer ppId;
 
-    private String ppName;
-
-    private Integer ppFee;
-
-    private String isAvaliable;
-
-    public Integer getPpId() {
-        return ppId;
-    }
-
-    public void setPpId(Integer ppId) {
-        this.ppId = ppId;
-    }
-
-    public String getPpName() {
-        return ppName;
-    }
-
-    public void setPpName(String ppName) {
-        this.ppName = ppName == null ? null : ppName.trim();
-    }
-
-    public Integer getPpFee() {
-        return ppFee;
-    }
-
-    public void setPpFee(Integer ppFee) {
-        this.ppFee = ppFee;
-    }
-
-    public String getIsAvaliable() {
-        return isAvaliable;
-    }
-
-    public void setIsAvaliable(String isAvaliable) {
-        this.isAvaliable = isAvaliable == null ? null : isAvaliable.trim();
-    }
+	private Integer pp_id;
+	private String pp_name;
+	private Integer pp_fee;
+	private char is_available;
+	/**
+	 * @return the pp_id
+	 */
+	public Integer getPp_id() {
+		return pp_id;
+	}
+	/**
+	 * @param pp_id the pp_id to set
+	 */
+	public void setPp_id(Integer pp_id) {
+		this.pp_id = pp_id;
+	}
+	/**
+	 * @return the pp_name
+	 */
+	public String getPp_name() {
+		return pp_name;
+	}
+	/**
+	 * @param pp_name the pp_name to set
+	 */
+	public void setPp_name(String pp_name) {
+		this.pp_name = pp_name;
+	}
+	/**
+	 * @return the pp_fee
+	 */
+	public Integer getPp_fee() {
+		return pp_fee;
+	}
+	/**
+	 * @param pp_fee the pp_fee to set
+	 */
+	public void setPp_fee(Integer pp_fee) {
+		this.pp_fee = pp_fee;
+	}
+	/**
+	 * @return the is_available
+	 */
+	public char getIs_available() {
+		return is_available;
+	}
+	/**
+	 * @param is_available the is_available to set
+	 */
+	public void setIs_available(char is_available) {
+		this.is_available = is_available;
+	}
+	
+	
 }

@@ -1,43 +1,63 @@
+/**
+ * 
+ */
 package com.clps.cm.pojo;
 
 public class RechargeCard {
-    private Integer cardId;
 
-    private String cardPwd;
-
-    private Integer cardCharge;
-
-    private String isAvailable;
-
-    public Integer getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(Integer cardId) {
-        this.cardId = cardId;
-    }
-
-    public String getCardPwd() {
-        return cardPwd;
-    }
-
-    public void setCardPwd(String cardPwd) {
-        this.cardPwd = cardPwd == null ? null : cardPwd.trim();
-    }
-
-    public Integer getCardCharge() {
-        return cardCharge;
-    }
-
-    public void setCardCharge(Integer cardCharge) {
-        this.cardCharge = cardCharge;
-    }
-
-    public String getIsAvailable() {
-        return isAvailable;
-    }
-
-    public void setIsAvailable(String isAvailable) {
-        this.isAvailable = isAvailable == null ? null : isAvailable.trim();
-    }
+	private Integer card_id;
+	private String card_pwd;
+	private Integer card_charge;
+	private String  is_available;
+	/**
+	 * @return the card_id
+	 */
+	public Integer getCard_id() {
+		return card_id;
+	}
+	/**
+	 * @param card_id the card_id to set
+	 */
+	public void setCard_id(Integer card_id) {
+		this.card_id = card_id;
+	}
+	/**
+	 * @return the card_pwd
+	 */
+	public String getCard_pwd() {
+		return card_pwd;
+	}
+	/**
+	 * @param card_pwd the card_pwd to set
+	 */
+	public void setCard_pwd(String card_pwd) {
+		this.card_pwd = card_pwd;
+	}
+	/**
+	 * @return the card_charge
+	 */
+	public Integer getCard_charge() {
+		return card_charge;
+	}
+	/**
+	 * @param card_charge the card_charge to set
+	 */
+	public void setCard_charge(Integer card_charge) {
+		this.card_charge = card_charge;
+	}
+	/**
+	 * @return the is_available
+	 */
+	public String getIs_available() {
+		return is_available;
+	}
+	/**
+	 * @param is_available the is_available to set
+	 */
+	public void setIs_available(String is_available) {
+		this.is_available = is_available;
+	}
+	
+	
+	
 }

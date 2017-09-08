@@ -1,53 +1,40 @@
 package com.clps.cm.pojo;
 
 public class Mobile {
-    private String telNumb;
-
-    private String telType;
-
-    private String telAdd;
-
-    private Integer accInitAmount;
-
-    private String isSale;
-
-    public String getTelNumb() {
-        return telNumb;
-    }
-
-    public void setTelNumb(String telNumb) {
-        this.telNumb = telNumb == null ? null : telNumb.trim();
-    }
-
-    public String getTelType() {
-        return telType;
-    }
-
-    public void setTelType(String telType) {
-        this.telType = telType == null ? null : telType.trim();
-    }
-
-    public String getTelAdd() {
-        return telAdd;
-    }
-
-    public void setTelAdd(String telAdd) {
-        this.telAdd = telAdd == null ? null : telAdd.trim();
-    }
-
-    public Integer getAccInitAmount() {
-        return accInitAmount;
-    }
-
-    public void setAccInitAmount(Integer accInitAmount) {
-        this.accInitAmount = accInitAmount;
-    }
-
-    public String getIsSale() {
-        return isSale;
-    }
-
-    public void setIsSale(String isSale) {
-        this.isSale = isSale == null ? null : isSale.trim();
-    }
+	private String tel_numb;
+	private String tel_type;
+	private String tel_add;
+	private Integer acc_init_amount;
+	private char is_sale;
+	public String getTel_numb() {
+		return tel_numb;
+	}
+	public void setTel_numb(String tel_numb) {
+		this.tel_numb = tel_numb;
+	}
+	public String getTel_type() {
+		return tel_type;
+	}
+	public void setTel_type(String tel_type) {
+		this.tel_type = tel_type;
+	}
+	public String getTel_add() {
+		return tel_add;
+	}
+	public void setTel_add(String tel_add) {
+		this.tel_add = tel_add;
+	}
+	public Integer getAcc_init_amount() {
+		return acc_init_amount;
+	}
+	public void setAcc_init_amount(Integer acc_init_amount) {
+		this.acc_init_amount = acc_init_amount;
+	}
+	public char getIs_sale() {
+		return is_sale;
+	}
+	public void setIs_sale(char is_sale) {
+		this.is_sale = is_sale;
+	}
+	
 }
